@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+let path = require('path')
+let commander = require('commander')
+
+let pkg = require('../package.json')
+const filename = path.basename(__filename)
+
+commander
+  .version(pkg.version)
+  .option('-u, --username <username>', 'Email or Username')
+  .option('-p, --password <password>', 'Password')
+  .option('-c, --competition_id <competition_id>', 'Competition ID')
+  .parse(process.argv)
+
+if (!commander['username'] || !commander['password'] || !commander['competition_id']) {
+  console.error(`Wrong usage. See ${filename} --help for help`)
+  process.exit(1)
+} else {
+  require('../')(commander['username'], commander['password'], commander['competition_id'])
+}

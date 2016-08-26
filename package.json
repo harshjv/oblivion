@@ -1,0 +1,43 @@
+{
+  "name": "oblivion",
+  "version": "0.0.1",
+  "description": "Kaggle data set downloader",
+  "bin": "bin/oblivion",
+  "main": "index.js",
+  "dependencies": {
+    "bluebird": "^3.4.3",
+    "commander": "^2.9.0",
+    "node-horseman": "^3.1.1",
+    "phantomjs-prebuilt": "^2.1.12"
+  },
+  "devDependencies": {
+    "standard": "^8.0.0"
+  },
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshjv/oblivion.git"
+  },
+  "keywords": [
+    "kaggle",
+    "remote",
+    "server",
+    "download",
+    "remote",
+    "server",
+    "download",
+    "data",
+    "set",
+    "data",
+    "dataset",
+    "oblivion"
+  ],
+  "author": "Harsh Vakharia <harshjv@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harshjv/oblivion/issues"
+  },
+  "homepage": "https://github.com/harshjv/oblivion#readme"
+}
