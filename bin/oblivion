@@ -11,11 +11,13 @@ commander
   .option('-u, --username <username>', 'Email or Username')
   .option('-p, --password <password>', 'Password')
   .option('-c, --competition_id <competition_id>', 'Competition ID')
+  .option('-d, --download_dir [download_dir]', 'Download directory for data (default: current directory)')
   .parse(process.argv)
 
 if (!commander['username'] || !commander['password'] || !commander['competition_id']) {
   console.error(`Wrong usage. See ${filename} --help for help`)
   process.exit(1)
 } else {
-  require('../')(commander['username'], commander['password'], commander['competition_id'])
+  let dataDir = commander['download_dir'] ? commander['download_dir'] : '.'
+  require('../')(commander['username'], commander['password'], commander['competition_id'], dataDir)
 }

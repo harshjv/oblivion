@@ -5,7 +5,7 @@ let util = require('./util')
 const BASE_URL = 'https://www.kaggle.com'
 const KAGGLE_LOGIN_URL = `${BASE_URL}/account/login`
 
-let oblivion = (username, password, competitionID) => {
+let oblivion = (username, password, competitionID, downloadDir) => {
   const COMPETITION_URL = `${BASE_URL}/c/${competitionID}/data`
 
   let horseman = new Horseman({
@@ -23,7 +23,7 @@ let oblivion = (username, password, competitionID) => {
     .waitForNextPage()
     .open(COMPETITION_URL)
     .evaluate(util.extractLinks, '#data-files > tbody a')
-    .then(util.downloadDataFiles(horseman))
+    .then(util.downloadDataFiles(horseman, downloadDir))
     .catch(util.handleErrors)
     .close()
 }

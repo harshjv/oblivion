@@ -1,5 +1,6 @@
 /* global $ */
 
+let path = require('path')
 let Promise = require('bluebird')
 
 var promisedFor = Promise.method(function (condition, action, value) {
@@ -18,7 +19,7 @@ module.exports.extractLinks = function (selector) {
   return array
 }
 
-module.exports.downloadDataFiles = (horseman) => {
+module.exports.downloadDataFiles = (horseman, downloadDir) => {
   return (links) => {
     return promisedFor(function (i) {
       return i < links.length
@@ -26,11 +27,14 @@ module.exports.downloadDataFiles = (horseman) => {
       let link = links[i]
       let name = link.split('/')
       name = name[name.length - 1]
-      console.log(`Downloading ${name}...`)
-      name = name[name.length - 1]
+
+      let downloadPath = path.join(downloadDir, name)
+
+      process.stdout.write(`Downloading ${name} ...`)
       return horseman
-              .download(link, `data/${name}`, true)
+              .download(link, downloadPath, true)
               .then(function (r) {
+                process.stdout.write(' Done\n')
                 return ++i
               })
     }, 0)
