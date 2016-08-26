@@ -19,6 +19,7 @@ Download Kaggle data sets easily! Remote server data set downloads, for example!
     -u, --username <username>              Email or Username
     -p, --password <password>              Password
     -c, --competition_id <competition_id>  Competition ID
+    -d, --download_dir [download_dir]      Download directory for data (default: current directory)
 
 
 ## License
