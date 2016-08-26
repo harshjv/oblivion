@@ -1,6 +1,6 @@
 {
   "name": "oblivion",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Kaggle data set downloader",
   "bin": "bin/oblivion",
   "main": "index.js",
