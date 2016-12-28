@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-let path = require('path')
-let commander = require('commander')
+const path = require('path')
+const commander = require('commander')
 
-let pkg = require('../package.json')
+const pkg = require('../package.json')
 const filename = path.basename(__filename)
 
 commander
@@ -18,6 +18,6 @@ if (!commander['username'] || !commander['password'] || !commander['competition_
   console.error(`Wrong usage. See ${filename} --help for help`)
   process.exit(1)
 } else {
-  let dataDir = commander['download_dir'] ? commander['download_dir'] : '.'
-  require('../')(commander['username'], commander['password'], commander['competition_id'], dataDir)
+  const dataDir = commander['download_dir'] ? commander['download_dir'] : '.'
+  require('../index.js')(commander['username'], commander['password'], commander['competition_id'], dataDir)
 }

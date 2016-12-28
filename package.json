@@ -1,6 +1,6 @@
 {
   "name": "oblivion",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Kaggle data set downloader",
   "bin": "bin/oblivion",
   "main": "index.js",
@@ -34,7 +34,7 @@
     "dataset",
     "oblivion"
   ],
-  "author": "Harsh Vakharia <harshjv@gmail.com>",
+  "author": "Harsh Vakharia <harshjv@gmail.com> (https://harshjv.github.io)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/harshjv/oblivion/issues"

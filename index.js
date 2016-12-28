@@ -1,14 +1,14 @@
-let Horseman = require('node-horseman')
+const Horseman = require('node-horseman')
 
-let util = require('./util')
+const util = require('./util')
 
 const BASE_URL = 'https://www.kaggle.com'
 const KAGGLE_LOGIN_URL = `${BASE_URL}/account/login`
 
-let oblivion = (username, password, competitionID, downloadDir) => {
+const oblivion = (username, password, competitionID, downloadDir) => {
   const COMPETITION_URL = `${BASE_URL}/c/${competitionID}/data`
 
-  let horseman = new Horseman({
+  const horseman = new Horseman({
     timeout: Infinity,
     loadImages: false,
     webSecurity: false
